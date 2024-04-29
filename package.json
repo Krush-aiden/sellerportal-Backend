@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon backend/nodeStart.js",
-    "build": "npm install && npm install --prefix seller && npm run build --prefix seller"
+    "build": "npm install && npm run build"
   },
   "author": "krushna",
   "license": "ISC",
