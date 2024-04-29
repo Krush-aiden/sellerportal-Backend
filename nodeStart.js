@@ -50,7 +50,9 @@ const router = express.Router()
 // it is used to test the server is working or Not => later we might study more about it;
 
 // let imagePath = 
-const conn = mongoose.connect("mongodb://localhost:27017/newCollection");
+console.log("🚀 ~ process.env.MONGODB_CONNECT_URL:", process.env.MONGODB_CONNECT_URL);
+
+const conn = mongoose.connect("mongodb+srv://krushnamahapatra8:I6YmGnlYQQCtl7GB@newcollection.a0elhc1.mongodb.net/?retryWrites=true&w=majority&appName=newCollection");
 //newCollection is Db Name
 const currentDate = moment().format('MMMM_Do_YYYY_h:mm:ss_a');
 
