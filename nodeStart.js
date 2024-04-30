@@ -20,10 +20,8 @@ const path = require('path');
 // }));
 
 app.use(bodyParser.json());
-
 app.use(cors({
-    origin: "https://sellerportal.onrender.com",
-    headers: ["Content-Type"],
+    origin: 'http://localhost:3000',
     credentials: true
 }));
 
