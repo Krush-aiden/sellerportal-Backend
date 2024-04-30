@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const port = 3000;
+const port = process.env.PORT || 3000;
 const fileSystem = require('fs');
 const multer = require("multer");
 const moment = require('moment')
@@ -20,10 +20,13 @@ const path = require('path');
 // }));
 
 app.use(bodyParser.json());
+
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: "https://sellerportal.onrender.com",
+    headers: ["Content-Type"],
     credentials: true
 }));
+
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(CookieParser())
