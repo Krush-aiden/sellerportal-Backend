@@ -20,7 +20,14 @@ const path = require('path');
 // }));
 
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors({
+    "origin": "*",
+    "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+    "preflightContinue": false,
+    "optionsSuccessStatus": 204
+}));
+
+// app.options('*', cors());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -753,23 +760,23 @@ app.delete('/deleteProduct/:mongoID', verifyToken, (req, res) => {
 //start Servers
 
 
-const __dirname1 = path.resolve();
+// const __dirname1 = path.resolve();
 
-console.log('process------>', process.env.NODE_ENV);
+// console.log('process------>', process.env.NODE_ENV);
 
-let environment = "production";
+// let environment = "production";
 
-if (environment == "production") {
-    console.log('asdasdas');
-    app.use(express.static(path.join(__dirname1, "/seller/browser")))
-    app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname1, "seller", "browser", "index.html"));
-    })
-} else {
-    app.get("/", (req, res) => {
-        res.send("API is Running Successfully");
-    });
-}
+// if (environment == "production") {
+//     console.log('asdasdas');
+//     app.use(express.static(path.join(__dirname1, "/seller/browser")))
+//     app.get('*', (req, res) => {
+//         res.sendFile(path.resolve(__dirname1, "seller", "browser", "index.html"));
+//     })
+// } else {
+//     app.get("/", (req, res) => {
+//         res.send("API is Running Successfully");
+//     });
+// }
 
 app.listen(port, () => {
     console.log('server is running on port', port);
