@@ -782,6 +782,10 @@ app.listen(port, () => {
     console.log('server is running on port', port);
 });
 
+app.get("/", (req, res) => {
+    res.send("API is Running Successfully");
+});
+
 //Recap => fundamental Node.js
 //Read-Write files => fs module //Core-module
 // create Server => host it in 9000 port => sending data & html pages to the server //Core-module => http Module
