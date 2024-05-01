@@ -783,6 +783,7 @@ app.listen(port, () => {
 });
 
 app.get("/", (req, res) => {
+    console.log('req-->');
     res.send("API is Running Successfully");
 });
 
